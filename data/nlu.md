@@ -190,16 +190,16 @@
 - thank you and good bye
 
 ## intent:transfer_money
-- I want to pay John
-- I want to transfer $100 to Bob
-- can i transfer money to Sally
+- I want to pay [John](PERSON)
+- I want to transfer $100 to [Bob](PERSON)
+- can i transfer money to [Sally](PERSON)
 - I want to transfer money
 - I want to pay someone
 - can I pay someone
 - I need to transfer money to a friend
-- can I transfer money to my mom
-- I want to pay Bill
+- can I transfer money to my [mom](PERSON)
+- I want to pay [Bill](PERSON)
 - pay my friend
 - transfer money
-- I want to transfer $100 to John
-- i want to transfer $400 to Akela
+- I want to transfer $100 to [John](PERSON)
+- i want to transfer $400 to [Akela](PERSON)

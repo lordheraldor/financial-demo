@@ -138,6 +138,8 @@
 - 100
 - [Bob](PERSON)
 - 1000
+- past 2 days
+- my [target](vendor_name) account
 
 ## intent:pay_cc
 - I would like to pay the [minimum balance](payment_amount) on my [gringtos](credit_card) card
@@ -164,6 +166,7 @@
 - i want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card
 - I want to pay $500 on my [gringots](credit_card) credit card on Sunday
 - I want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card today
+- Pay credit card
 
 ## intent:search_transactions
 - how much did I spend at [Target](vendor_name) this week?
@@ -180,6 +183,7 @@
 - can I look at past transactions
 - I want to search my transactions with [amazon](vendor_name)
 - can i seem my transactions with [target](vendor_name)
+- ending in 7890
 
 ## intent:thankyou
 - thank you goodbye

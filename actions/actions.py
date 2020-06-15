@@ -15,10 +15,10 @@ logger = logging.getLogger(__name__)
 
 
 def custom_request_next_slot(
-    form,
-    dispatcher: "CollectingDispatcher",
-    tracker: "Tracker",
-    domain: Dict[Text, Any],
+        form,
+        dispatcher: "CollectingDispatcher",
+        tracker: "Tracker",
+        domain: Dict[Text, Any],
 ) -> Optional[List[EventType]]:
     """Request the next slot and utter template if needed,
         else return None"""
@@ -43,10 +43,10 @@ class PayCCForm(FormAction):
         return "cc_payment_form"
 
     def request_next_slot(
-        self,
-        dispatcher: "CollectingDispatcher",
-        tracker: "Tracker",
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: "CollectingDispatcher",
+            tracker: "Tracker",
+            domain: Dict[Text, Any],
     ) -> Optional[List[EventType]]:
 
         return custom_request_next_slot(self, dispatcher, tracker, domain)
@@ -99,11 +99,11 @@ class PayCCForm(FormAction):
         ]
 
     def validate_payment_amount(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate payment amount value."""
 
@@ -132,11 +132,11 @@ class PayCCForm(FormAction):
             return {"payment_amount": None}
 
     def validate_credit_card(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate credit_card value."""
 
@@ -147,11 +147,11 @@ class PayCCForm(FormAction):
             return {"credit_card": None}
 
     def validate_time(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate time value."""
 
@@ -163,10 +163,10 @@ class PayCCForm(FormAction):
         return parsedtime
 
     def submit(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> List[Dict]:
         """Define what the form has to do
             after all required slots are filled"""
@@ -193,10 +193,10 @@ class TransactSearchForm(FormAction):
         return "transact_search_form"
 
     def request_next_slot(
-        self,
-        dispatcher: "CollectingDispatcher",
-        tracker: "Tracker",
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: "CollectingDispatcher",
+            tracker: "Tracker",
+            domain: Dict[Text, Any],
     ) -> Optional[List[EventType]]:
 
         return custom_request_next_slot(self, dispatcher, tracker, domain)
@@ -238,11 +238,11 @@ class TransactSearchForm(FormAction):
         ]
 
     def validate_vendor_name(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate vendor_name value."""
 
@@ -253,11 +253,11 @@ class TransactSearchForm(FormAction):
             return {"vendor_name": None}
 
     def validate_time(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """Validate time value."""
         timeentity = get_entity_details(tracker, "time")
@@ -288,10 +288,10 @@ class TransactSearchForm(FormAction):
         }
 
     def submit(
-        self,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> List[Dict]:
         """Define what the form has to do
             after all required slots are filled"""
@@ -345,10 +345,10 @@ class TransferForm(FormAction):
         return "transfer_form"
 
     def request_next_slot(
-        self,
-        dispatcher: "CollectingDispatcher",
-        tracker: "Tracker",
-        domain: Dict[Text, Any],
+            self,
+            dispatcher: "CollectingDispatcher",
+            tracker: "Tracker",
+            domain: Dict[Text, Any],
     ) -> Optional[List[EventType]]:
 
         return custom_request_next_slot(self, dispatcher, tracker, domain)
@@ -379,11 +379,11 @@ class TransferForm(FormAction):
         }
 
     def validate_amount_of_money(
-        self,
-        value: Text,
-        dispatcher: CollectingDispatcher,
-        tracker: Tracker,
-        domain: Dict[Text, Any],
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         try:
             entity = get_entity_details(
@@ -443,3 +443,17 @@ class ActionAccountBalance(Action):
                 init_account_balance=f"{init_account_balance:.2f}",
             )
             return [SlotSet("payment_amount", None)]
+
+
+class TestActionServer(Action):
+    def name(self):
+        return "test_action_server"
+
+    def run(
+            self,
+            dispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]
+    ) -> Dict:
+        dispatcher.utter_message("Test server reached!")
+        return {}

@@ -18,6 +18,7 @@ intents:
 - check_balance
 - check_earnings:
     use_entities: []
+- test
 entities:
 - amount-of-money
 - payment_amount
@@ -152,6 +153,7 @@ responses:
   - text: Your balance was {currency}{init_account_balance} and is now {currency}{account_balance}
       after the transfer
 actions:
+- test_action_server
 - action_account_balance
 - utter_ask_transfer_form_amount_of_money
 - utter_ask_transfer_form_PERSON

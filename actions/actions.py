@@ -455,5 +455,5 @@ class TestActionServer(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]
     ) -> Dict:
-        dispatcher.utter_message("Test server reached!")
+        dispatcher.utter_message("Test - server reached!")
         return {}

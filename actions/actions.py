@@ -488,7 +488,6 @@ class ActionAccountBalance(Action):
             return [SlotSet("payment_amount", None)]
 
 
-<<<<<<< HEAD
 class TestActionServer(Action):
     def name(self):
         return "test_action_server"
@@ -501,7 +500,7 @@ class TestActionServer(Action):
     ) -> Dict:
         dispatcher.utter_message("Test - server reached!")
         return {}
-=======
+
 class ActionCreditCardBalance(Action):
     def name(self):
         return "action_credit_card_balance"
@@ -602,4 +601,3 @@ class ActionRestart(Action):
     ) -> List[EventType]:
 
         return [Restarted(), FollowupAction("action_session_start")]
->>>>>>> upstream/master

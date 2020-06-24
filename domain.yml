@@ -181,7 +181,6 @@ responses:
   - text: The current balance for your {credit_card} account is {currency}{amount_of_money}.
   utter_recipients:
   - text: These are your known recpients to whom you can send money:{formatted_recipients}
-
 actions:
 - test_action_server
 - action_account_balance
@@ -228,7 +227,6 @@ actions:
 - utter_insufficient_funds
 - utter_credit_card_balance
 - utter_recipients
-
 forms:
 - cc_payment_form
 - transfer_form

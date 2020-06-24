@@ -22,6 +22,8 @@
 
 ## intent:check_balance
 - How much money is on my account?
+- what's my balance?
+- what's my current balance?
 - What's left on that account?
 - How much do I have on that account?
 - What's the balance on that account?
@@ -29,7 +31,32 @@
 - what is my account balance
 - what's my account balance?
 - what's my account balance
-- What's my account balance?
+- what's my balance?
+- whats my account balance
+- What's my [credit card](account_type) balance
+- What's my [credit](account_type) balance
+- How much money do I owe on my [credit cards](account_type)
+- Show me my [credit card](account_type) balance
+- What [credit accounts](account_type) do I have
+- Show me my [credit accounts](account_type)
+- Whats the balance on my [credit account](account_type)
+- What's my [credit account](account_type)
+- What's my [credit all](credit_card) balance
+- What's my [gringotts](credit_card) card balance
+- What's the balance on the [credit all](credit_card) account
+- Show me my [iron bank](credit_card) balance
+- What's my [justice bank](credit_card) balance
+- What's the balance on the [justice bank](credit_card) account
+- what's my [gringots](credit_card) [credit card](account_type) balance?
+- what's my [credit card](account_type) balance?
+- what's my [credit card](account_type) account balance?
+- What is my [Gringotts](credit_card) card balance?
+- whats my [credit card](account_type) balance
+- What is my [gringotts](credit_card) card balance?
+- What is my [gringotts](credit_card) balance?
+- whats my [gringots](credit_card) card balance?
+- what's my [gringot](credit_card)'s card balance?
+- what's my [gringots](credit_card) account balance?
 
 ## intent:check_earnings
 - How much money went into my account last month?
@@ -42,6 +69,7 @@
 - check deposits for last week
 - total deposits over last year
 - how much was deposited in January
+- how much money have I earned?
 
 ## intent:deny
 - not really
@@ -101,31 +129,31 @@
 - the [minimum balance](payment_amount)
 - my [minimum balance](payment_amount)
 - my [current balance](payment_amount)
-- [gringots](credit_card) card
+- [gringotts](credit_card) card
 - [credit all](credit_card) card
 - [iron bank](credit_card) card
 - [justice bank](credit_card) card
-- [gringots](credit_card)
+- [gringotts](credit_card)
 - [credit all](credit_card)
 - [iron bank](credit_card)
 - [justice bank](credit_card)
-- [gringots](credit_card) account
+- [gringotts](credit_card) account
 - [credit all](credit_card) account
 - [iron bank](credit_card) account
 - [justice bank](credit_card) account
-- [gringots](credit_card) credit card
-- [credit all](credit_card) credit card
-- [iron bank](credit_card) credit card
-- [justice bank](credit_card) credit card
-- my [gringots](credit_card) credit card
-- my [credit all](credit_card) credit card
-- my [iron bank](credit_card) credit card
-- my [justice bank](credit_card) credit card
-- my [gringots](credit_card) card
+- [gringotts](credit_card) [credit card](account_type)
+- [credit all](credit_card) [credit card](account_type)
+- [iron bank](credit_card) [credit card](account_type)
+- [justice bank](credit_card) [credit card](account_type)
+- my [gringotts](credit_card) [credit card](account_type)
+- my [credit all](credit_card) [credit card](account_type)
+- my [iron bank](credit_card) [credit card](account_type)
+- my [justice bank](credit_card) [credit card](account_type)
+- my [gringotts](credit_card) card
 - my [credit all](credit_card) card
 - my [iron bank](credit_card) card
 - my [justice bank](credit_card) card
-- towards my [gringots](credit_card) card
+- towards my [gringotts](credit_card) card
 - towards my [credit all](credit_card) card
 - towards my [iron bank](credit_card) card
 - towards my [justice bank](credit_card) card
@@ -133,7 +161,7 @@
 - for friday
 - for tomorrow
 - for saturday
-- I want to pay the [minimum balance](payment_amount) on my [gringots](credit_card) credit card today
+- I want to pay the [minimum balance](payment_amount) on my [gringotts](credit_card) [credit card](account_type) today
 - today
 - 100
 - [Bob](PERSON)
@@ -143,7 +171,7 @@
 
 ## intent:pay_cc
 - I would like to pay the [minimum balance](payment_amount) on my [gringtos](credit_card) card
-- I want to pay my credit card
+- I want to pay my [credit card](account_type)
 - I want to pay my card
 - Pay my card
 - Pay my [credit all](credit_card) card
@@ -154,6 +182,7 @@
 - I want to pay my visa bill
 - Pay my mastercard
 - I want to pay my MasterCard bill
+<<<<<<< HEAD
 - I want to pay my credit card bill
 - I want to pay the [current balance](payment_amount) on my credit card
 - can you help me pay the [current balance](payment_amount) on my credit card
@@ -167,6 +196,21 @@
 - I want to pay $500 on my [gringots](credit_card) credit card on Sunday
 - I want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card today
 - Pay credit card
+=======
+- I want to pay my [credit card](account_type) bill
+- I want to pay the [current balance](payment_amount) on my [credit card](account_type)
+- can you help me pay the [current balance](payment_amount) on my [credit card](account_type)
+- i want to pay off my [credit all](credit_card) [credit card](account_type)
+- i want to pay off my [credit card](account_type)
+- I want to pay off my [credit card](account_type)
+- i want to pay my [credit card](account_type)
+- i want to pay off my [gringotts](credit_card) [credit card](account_type)
+- I want to pay my [current balance](payment_amount) on my [Gringtos](credit_card) [credit card](account_type)
+- i want to pay my [current balance](payment_amount) on my [gringotts](credit_card) [credit card](account_type)
+- I want to pay $500 on my [gringotts](credit_card) [credit card](account_type) on Sunday
+- I want to pay my [current balance](payment_amount) on my [gringotts](credit_card) [credit card](account_type) today
+- i need to pay off my [gringots](credit_card) [credit card](account_type)
+>>>>>>> upstream/master
 
 ## intent:search_transactions
 - how much did I spend at [Target](vendor_name) this week?
@@ -209,6 +253,7 @@
 - I want to pay [Bill](PERSON)
 - pay my friend
 - transfer money
+<<<<<<< HEAD
 - I want to transfer $100 to [John](PERSON)
 - i want to transfer $400 to [Akela](PERSON)
 - transfer
@@ -222,3 +267,38 @@
 - test action
 - test me
 - does this even work?
+=======
+- I want to transfer $100 to John
+- i want to transfer $400 to Akela
+- I want to pay Paula Handy
+
+## intent:check_recipients
+- Who can I send money to?
+- Who are my known recipients
+- Show me my list of recipients
+- Show the recipient list
+- Show me people I can send money to
+- Who is a valid payee
+- who can I pay?
+- who can I transfer money?
+- who's in my recipient list?
+- who can I transfer money to?
+
+## synonym:gringotts
+- gringots
+- Gringots
+- gringot's
+- gringot
+- Gringot
+- Gringott
+- gringott
+- gringott's
+- Gringtos
+- gringtos
+
+## synonym:credit
+- credit card
+- credit cards
+- credit account
+- credit accounts
+>>>>>>> upstream/master

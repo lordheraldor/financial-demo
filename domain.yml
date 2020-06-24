@@ -15,10 +15,18 @@ intents:
 - ask_transfer_charge
 - search_transactions:
     use_entities: []
-- check_balance
+- check_balance:
+    use_entities: ["account_type","credit_card"]
 - check_earnings:
     use_entities: []
+<<<<<<< HEAD
 - test
+=======
+- check_recipients
+- session_start
+- restart
+
+>>>>>>> upstream/master
 entities:
 - amount-of-money
 - payment_amount
@@ -28,16 +36,18 @@ entities:
 - time
 - PERSON
 - number
+- account_type
+
 slots:
   PERSON:
     type: unfeaturized
   account_balance:
     type: unfeaturized
-    initial_value: 1000
   amount_of_money:
     type: unfeaturized
   amount_transferred:
     type: unfeaturized
+    initial_value: 0
   confirm:
     type: unfeaturized
   credit_card:
@@ -62,8 +72,32 @@ slots:
     type: unfeaturized
   time:
     type: unfeaturized
+<<<<<<< HEAD
   vendor_name:
     type: unfeaturized
+=======
+  start_time_formatted:
+    type: unfeaturized
+  time_formatted:
+    type: unfeaturized
+  end_time_formatted:
+    type: unfeaturized
+  grain:
+    type: unfeaturized
+  vendor_name:
+    type: unfeaturized
+  currency:
+    type: unfeaturized
+  transaction_history:
+    type: unfeaturized
+  credit_card_balance:
+    type: unfeaturized
+  known_recipients:
+    type: unfeaturized
+  vendor_list:
+    type: unfeaturized
+
+>>>>>>> upstream/master
 responses:
   utter_ask_transfer_form_amount_of_money:
   - text: How much money do you want to transfer?
@@ -76,10 +110,14 @@ responses:
   utter_noworries:
   - text: You're welcome :)
   utter_transfer_complete:
+<<<<<<< HEAD
   - text: Successfully transferred {currency}{amount_of_money} to {PERSON}
+=======
+  - text: 'Successfully transferred {currency}{amount_of_money} to {PERSON}.'
+>>>>>>> upstream/master
   utter_transfer_charge:
   - text: You are entitled to six transfers within a statement cycle before being
-      charged. For subsequent transfers you will be charged 10 per transaction.
+      charged. For subsequent transfers you will be charged {currency}10 per transaction.
   utter_ask_cc_payment_form_payment_amount:
   - text: How much do you want to pay?
   utter_ask_cc_payment_form_credit_card:
@@ -102,6 +140,7 @@ responses:
   utter_no_transactdate:
   - text: Sorry, that's not a recognized time frame.
   utter_cc_pay_scheduled:
+<<<<<<< HEAD
   - text: Payment of {currency}{payment_amount}{payment_amount_type} towards your
       {credit_card} account scheduled to be paid at {time}
   utter_searching_spend_transactions:
@@ -110,6 +149,18 @@ responses:
   - text: I found {numtransacts} transactions{vendor_name} totalling {currency}{total}
   utter_searching_deposit_transactions:
   - text: Searching deposits made to your account between {start_time} and {end_time}...
+=======
+  - text: 'Payment of {currency}{payment_amount}{payment_amount_type} towards your {credit_card}
+      account scheduled to be paid at {time_formatted}.'
+  utter_searching_spend_transactions:
+  - text: Searching transactions{vendor_name} between {start_time_formatted}
+      and {end_time_formatted}...
+  utter_found_spend_transactions:
+  - text: 'I found {numtransacts} transactions{vendor_name} totalling {currency}{total}.'
+  utter_searching_deposit_transactions:
+  - text: Searching deposits made to your account between {start_time_formatted}
+      and {end_time_formatted}...
+>>>>>>> upstream/master
   utter_found_deposit_transactions:
   - text: I found {numtransacts} deposits made to your account totalling {currency}{total}
   utter_ask_rephrase:
@@ -129,6 +180,7 @@ responses:
   utter_default:
   - text: Sorry, I didn't get that. Could you rephrase?
   utter_ask_cc_payment_form_confirm:
+<<<<<<< HEAD
   - buttons:
     - payload: /affirm
       title: Yes
@@ -136,6 +188,15 @@ responses:
       title: No, cancel the transaction
     text: Would you like to schedule a payment of {currency}{payment_amount}{payment_amount_type}
       towards your {credit_card} account for {time}?
+=======
+  - text: 'Would you like to schedule a payment of {currency}{payment_amount}{payment_amount_type}
+      towards your {credit_card} account for {time_formatted}?'
+    buttons:
+    - title: Yes
+      payload: /affirm
+    - title: No, cancel the transaction
+      payload: /deny
+>>>>>>> upstream/master
   utter_ask_transfer_form_confirm:
   - buttons:
     - payload: /affirm
@@ -144,17 +205,32 @@ responses:
       title: No, cancel the transaction
     text: Would you like to transfer {currency}{amount_of_money} to {PERSON}?
   utter_transfer_cancelled:
-  - text: Transfer cancelled
+  - text: Transfer cancelled.
   utter_cc_pay_cancelled:
-  - text: Credit card account payment cancelled
+  - text: Credit card account payment cancelled.
   utter_account_balance:
+<<<<<<< HEAD
   - text: Your balance is {currency}{init_account_balance}
   utter_changed_account_balance:
   - text: Your balance was {currency}{init_account_balance} and is now {currency}{account_balance}
       after the transfer
+=======
+  - text: "Your balance is {currency}{init_account_balance}."
+  utter_changed_account_balance:
+  - text: "Your balance was {currency}{init_account_balance} and is now {currency}{account_balance} after transfers and payments."
+  utter_unknown_recipient:
+  - text: Sorry, {PERSON} is not in your list of known recipients.
+  utter_insufficient_funds:
+  - text: Sorry, you don't have enough money to do that!
+  utter_credit_card_balance:
+  - text: The current balance for your {credit_card} account is {currency}{amount_of_money}.
+  utter_recipients:
+  - text: These are your known recpients to whom you can send money:{formatted_recipients}
+>>>>>>> upstream/master
 actions:
 - test_action_server
 - action_account_balance
+<<<<<<< HEAD
 - utter_ask_transfer_form_amount_of_money
 - utter_ask_transfer_form_PERSON
 - utter_goodbye
@@ -190,6 +266,13 @@ actions:
 - utter_cc_pay_cancelled
 - utter_account_balance
 - utter_changed_account_balance
+=======
+- action_session_start
+- action_restart
+- action_credit_card_balance
+- action_recipients
+
+>>>>>>> upstream/master
 forms:
 - cc_payment_form
 - transfer_form

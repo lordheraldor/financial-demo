@@ -11,12 +11,12 @@
 ## pay credit card happy path
 * greet: hi
     - utter_greet
-* pay_cc: i want to pay off my [gringots](credit_card) credit card
+* pay_cc: i want to pay off my [gringots]{"entity": "credit_card", "value": "gringotts"}
     - cc_payment_form
     - form{"name":"cc_payment_form"}
 * form: inform: my [current balance](payment_amount)
     - form: cc_payment_form
-* form: inform: [next week tuesday
+* form: inform: next week tuesday
     - form: cc_payment_form
 * form: affirm: /affirm
     - form: cc_payment_form
@@ -24,7 +24,7 @@
 
 
 ## pay credit card and check account balance inside form
-* pay_cc: i want to pay off my [justice bank](credit_card) credit card
+* pay_cc: i want to pay off my [justice bank](credit_card) [credit card]{"entity":"account_type","value":"credit"}
     - cc_payment_form
     - form{"name":"cc_payment_form"}
 * form: inform: my [current balance](payment_amount)
@@ -140,3 +140,13 @@
 * form: inform: january 2020
     - form: transact_search_form
     - form{"name":null}
+
+
+## check credit account balance
+* check_balance: What are my [credit accounts]{"entity":"account_type","value":"credit"}
+    - action_credit_card_balance
+
+
+## check list of known recipients
+* check_recipients: Show me my list of recipients
+    - action_recipients

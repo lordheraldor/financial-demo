@@ -228,7 +228,7 @@ actions:
 - utter_insufficient_funds
 - utter_credit_card_balance
 - utter_recipients
-- 
+
 forms:
 - cc_payment_form
 - transfer_form

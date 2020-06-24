@@ -253,7 +253,6 @@
 - I want to pay [Bill](PERSON)
 - pay my friend
 - transfer money
-<<<<<<< HEAD
 - I want to transfer $100 to [John](PERSON)
 - i want to transfer $400 to [Akela](PERSON)
 - transfer
@@ -267,10 +266,6 @@
 - test action
 - test me
 - does this even work?
-=======
-- I want to transfer $100 to John
-- i want to transfer $400 to Akela
-- I want to pay Paula Handy
 
 ## intent:check_recipients
 - Who can I send money to?
@@ -301,4 +296,3 @@
 - credit cards
 - credit account
 - credit accounts
->>>>>>> upstream/master

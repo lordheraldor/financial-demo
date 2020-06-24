@@ -16,14 +16,15 @@ intents:
 - search_transactions:
     use_entities: []
 - check_balance:
-    use_entities: ["account_type","credit_card"]
+    use_entities:
+    - account_type
+    - credit_card
 - check_earnings:
     use_entities: []
 - test
 - check_recipients
 - session_start
 - restart
-
 entities:
 - amount-of-money
 - payment_amount
@@ -34,7 +35,6 @@ entities:
 - PERSON
 - number
 - account_type
-
 slots:
   PERSON:
     type: unfeaturized
@@ -49,12 +49,17 @@ slots:
     type: unfeaturized
   credit_card:
     type: unfeaturized
+  credit_card_balance:
+    type: unfeaturized
   currency:
     type: unfeaturized
-    initial_value: $
   end_time:
     type: unfeaturized
+  end_time_formatted:
+    type: unfeaturized
   grain:
+    type: unfeaturized
+  known_recipients:
     type: unfeaturized
   payment_amount:
     type: unfeaturized
@@ -67,29 +72,18 @@ slots:
     type: unfeaturized
   start_time:
     type: unfeaturized
-  time:
-    type: unfeaturized
   start_time_formatted:
+    type: unfeaturized
+  time:
     type: unfeaturized
   time_formatted:
     type: unfeaturized
-  end_time_formatted:
-    type: unfeaturized
-  grain:
-    type: unfeaturized
-  vendor_name:
-    type: unfeaturized
-  currency:
-    type: unfeaturized
   transaction_history:
-    type: unfeaturized
-  credit_card_balance:
-    type: unfeaturized
-  known_recipients:
     type: unfeaturized
   vendor_list:
     type: unfeaturized
-
+  vendor_name:
+    type: unfeaturized
 responses:
   utter_ask_transfer_form_amount_of_money:
   - text: How much money do you want to transfer?
@@ -128,16 +122,15 @@ responses:
   utter_no_transactdate:
   - text: Sorry, that's not a recognized time frame.
   utter_cc_pay_scheduled:
-  - text: Payment of {currency}{payment_amount}{payment_amount_type} towards your {credit_card}
-      account scheduled to be paid at {time_formatted}.
+  - text: Payment of {currency}{payment_amount}{payment_amount_type} towards your
+      {credit_card} account scheduled to be paid at {time_formatted}.
   utter_searching_spend_transactions:
-  - text: Searching transactions{vendor_name} between {start_time_formatted}
-      and {end_time_formatted}...
+  - text: Searching transactions{vendor_name} between {start_time_formatted} and {end_time_formatted}...
   utter_found_spend_transactions:
   - text: I found {numtransacts} transactions{vendor_name} totalling {currency}{total}.
   utter_searching_deposit_transactions:
-  - text: Searching deposits made to your account between {start_time_formatted}
-      and {end_time_formatted}...
+  - text: Searching deposits made to your account between {start_time_formatted} and
+      {end_time_formatted}...
   utter_found_deposit_transactions:
   - text: I found {numtransacts} deposits made to your account totalling {currency}{total}
   utter_ask_rephrase:
@@ -157,13 +150,13 @@ responses:
   utter_default:
   - text: Sorry, I didn't get that. Could you rephrase?
   utter_ask_cc_payment_form_confirm:
-  - text: Would you like to schedule a payment of {currency}{payment_amount}{payment_amount_type}
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: /deny
+      title: No, cancel the transaction
+    text: Would you like to schedule a payment of {currency}{payment_amount}{payment_amount_type}
       towards your {credit_card} account for {time_formatted}?
-    buttons:
-    - title: Yes
-      payload: /affirm
-    - title: No, cancel the transaction
-      payload: /deny
   utter_ask_transfer_form_confirm:
   - buttons:
     - payload: /affirm
@@ -178,7 +171,8 @@ responses:
   utter_account_balance:
   - text: Your balance is {currency}{init_account_balance}.
   utter_changed_account_balance:
-  - text: Your balance was {currency}{init_account_balance} and is now {currency}{account_balance} after transfers and payments.
+  - text: Your balance was {currency}{init_account_balance} and is now {currency}{account_balance}
+      after transfers and payments.
   utter_unknown_recipient:
   - text: Sorry, {PERSON} is not in your list of known recipients.
   utter_insufficient_funds:
@@ -230,7 +224,11 @@ actions:
 - action_restart
 - action_credit_card_balance
 - action_recipients
-
+- utter_unknown_recipient
+- utter_insufficient_funds
+- utter_credit_card_balance
+- utter_recipients
+- 
 forms:
 - cc_payment_form
 - transfer_form

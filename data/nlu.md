@@ -182,21 +182,7 @@
 - I want to pay my visa bill
 - Pay my mastercard
 - I want to pay my MasterCard bill
-<<<<<<< HEAD
-- I want to pay my credit card bill
-- I want to pay the [current balance](payment_amount) on my credit card
-- can you help me pay the [current balance](payment_amount) on my credit card
-- i want to pay off my [credit all](credit_card) credit card
-- i want to pay off my credit card
-- I want to pay off my credit card
-- i want to pay my credit card
-- i want to pay off my [gringots](credit_card) credit card
-- I want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card
-- i want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card
-- I want to pay $500 on my [gringots](credit_card) credit card on Sunday
-- I want to pay my [current balance](payment_amount) on my [gringots](credit_card) credit card today
 - Pay credit card
-=======
 - I want to pay my [credit card](account_type) bill
 - I want to pay the [current balance](payment_amount) on my [credit card](account_type)
 - can you help me pay the [current balance](payment_amount) on my [credit card](account_type)
@@ -210,7 +196,6 @@
 - I want to pay $500 on my [gringotts](credit_card) [credit card](account_type) on Sunday
 - I want to pay my [current balance](payment_amount) on my [gringotts](credit_card) [credit card](account_type) today
 - i need to pay off my [gringots](credit_card) [credit card](account_type)
->>>>>>> upstream/master
 
 ## intent:search_transactions
 - how much did I spend at [Target](vendor_name) this week?
@@ -253,7 +238,6 @@
 - I want to pay [Bill](PERSON)
 - pay my friend
 - transfer money
-<<<<<<< HEAD
 - I want to transfer $100 to [John](PERSON)
 - i want to transfer $400 to [Akela](PERSON)
 - transfer
@@ -267,10 +251,6 @@
 - test action
 - test me
 - does this even work?
-=======
-- I want to transfer $100 to John
-- i want to transfer $400 to Akela
-- I want to pay Paula Handy
 
 ## intent:check_recipients
 - Who can I send money to?
@@ -301,4 +281,3 @@
 - credit cards
 - credit account
 - credit accounts
->>>>>>> upstream/master

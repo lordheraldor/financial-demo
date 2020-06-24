@@ -72,13 +72,21 @@ slots:
     type: unfeaturized
   time:
     type: unfeaturized
+<<<<<<< HEAD
   vendor_name:
     type: unfeaturized
+=======
   start_time_formatted:
     type: unfeaturized
   time_formatted:
     type: unfeaturized
   end_time_formatted:
+    type: unfeaturized
+  grain:
+    type: unfeaturized
+  vendor_name:
+    type: unfeaturized
+  currency:
     type: unfeaturized
   transaction_history:
     type: unfeaturized
@@ -89,6 +97,7 @@ slots:
   vendor_list:
     type: unfeaturized
 
+>>>>>>> upstream/master
 responses:
   utter_ask_transfer_form_amount_of_money:
   - text: How much money do you want to transfer?

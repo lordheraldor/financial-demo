@@ -347,10 +347,12 @@
     - utter_ask_back_to_transfer
 * deny
     - utter_ok
+<<<<<<< HEAD
     
 ## Test action server
 * test
    - test_action_server
+=======
 
 ## Show list of known recipients
 * check_recipients
@@ -367,3 +369,5 @@
 ## Show credit accounts
 * check_balance{"account_type":"credit","credit_card":"gringotts"}
     - action_credit_card_balance
+
+>>>>>>> upstream/master
